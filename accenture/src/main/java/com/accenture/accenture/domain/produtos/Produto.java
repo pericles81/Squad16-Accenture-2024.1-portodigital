@@ -1,5 +1,6 @@
 package com.accenture.accenture.domain.produtos;
 
+import com.accenture.accenture.domain.lojas.Loja;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,4 +27,8 @@ public class Produto {
 
     @Column(nullable = false)
     private String descricao;
+
+    @ManyToOne
+    @JoinColumn(name = "loja_id")
+    private Loja loja;
 }

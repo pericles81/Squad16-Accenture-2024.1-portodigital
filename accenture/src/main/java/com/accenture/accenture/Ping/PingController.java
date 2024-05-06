@@ -12,9 +12,4 @@ public class PingController {
     public String ping(){
         return "pong";
     }
-
-    @GetMapping
-    public String ping2(){
-        return "pong2";
-    }
 }
