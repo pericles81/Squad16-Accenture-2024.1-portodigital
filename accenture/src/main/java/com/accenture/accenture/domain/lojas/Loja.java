@@ -1,5 +1,6 @@
 package com.accenture.accenture.domain.lojas;
 
+import com.accenture.accenture.domain.lojas.dto.LojaRequest;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -37,4 +38,11 @@ public class Loja {
     @OneToMany(mappedBy = "loja")
     private List<Produto> produtos;
 
+    public Loja(LojaRequest request) {
+        this.nome = request.getNome();
+        this.endereco = request.getEndereco();
+        this.senha = request.getSenha();
+        this.especialidade = request.getEspecialidade();
+        this.cnpj = request.getCnpj();
+    }
 }
