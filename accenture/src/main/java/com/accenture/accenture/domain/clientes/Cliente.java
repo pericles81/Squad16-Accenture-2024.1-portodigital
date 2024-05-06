@@ -1,5 +1,6 @@
 package com.accenture.accenture.domain.clientes;
 
+import com.accenture.accenture.domain.clientes.dto.ClienteRequest;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,4 +30,10 @@ public class Cliente {
     @ManyToOne
     @JoinColumn(name = "produto_id")
     private Produto produto;
+
+    public Cliente(ClienteRequest clienteToCreate) {
+        this.nome = clienteToCreate.getNome();
+        this.senha = clienteToCreate.getSenha();
+        this.email = clienteToCreate.getEmail();
+    }
 }

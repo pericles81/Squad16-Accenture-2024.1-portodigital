@@ -1,4 +1,4 @@
-package com.accenture.accenture.Ping;
+package com.accenture.accenture.controllers.Ping;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
