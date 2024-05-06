@@ -2,10 +2,8 @@ package com.accenture.accenture.domain.clientes.dto;
 
 import com.accenture.accenture.domain.clientes.Cliente;
 import lombok.Data;
-import lombok.Getter;
 
 @Data
-@Getter
 public class ClienteResponse {
     private Long id;
     private String nome;
