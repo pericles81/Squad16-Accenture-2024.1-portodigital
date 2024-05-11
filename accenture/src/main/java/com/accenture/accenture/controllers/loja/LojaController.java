@@ -1,4 +1,4 @@
-package com.accenture.accenture.controllers.cliente;
+package com.accenture.accenture.controllers.loja;
 
 import com.accenture.accenture.domain.lojas.dto.LojaRequest;
 import com.accenture.accenture.domain.lojas.dto.LojaResponse;
