@@ -10,6 +10,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/clientes")
@@ -25,6 +26,15 @@ public class ClienteController {
             return ResponseEntity.noContent().build();
         else
             return ResponseEntity.ok(clientes);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Optional<ClienteResponse>> getClientesDetails(@PathVariable Long id){
+        var cliente = clienteService.getClienteDetails(id);
+        if(cliente.isEmpty())
+            return ResponseEntity.noContent().build();
+        else
+            return ResponseEntity.ok(cliente);
     }
 
     @PostMapping
