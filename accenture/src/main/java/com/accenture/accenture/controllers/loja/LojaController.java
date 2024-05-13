@@ -10,6 +10,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/lojas")
@@ -25,6 +26,15 @@ public class LojaController {
             return ResponseEntity.noContent().build();
         else
             return ResponseEntity.ok(lojas);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Optional<LojaResponse>> getLojaDetails(@PathVariable Long id){
+        var loja = lojaService.getLojaDetails(id);
+        if(loja.isEmpty())
+            return ResponseEntity.noContent().build();
+        else
+            return ResponseEntity.ok(loja);
     }
 
     @PostMapping

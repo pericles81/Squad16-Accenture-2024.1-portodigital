@@ -45,4 +45,5 @@ public class Loja {
         this.especialidade = request.getEspecialidade();
         this.cnpj = request.getCnpj();
     }
+
 }
