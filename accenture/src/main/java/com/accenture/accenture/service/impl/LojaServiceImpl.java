@@ -8,6 +8,7 @@ import com.accenture.accenture.service.LojaService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LojaServiceImpl implements LojaService {
@@ -21,6 +22,12 @@ public class LojaServiceImpl implements LojaService {
     @Override
     public List<LojaResponse> getLojas() {
         return lojaRepository.findAll().stream().map(LojaResponse::new).toList();
+    }
+
+    @Override
+    public Optional<LojaResponse> getLojaDetails(Long id) {
+        var loja = lojaRepository.getReferenceById(id);
+        return Optional.of(new LojaResponse(loja));
     }
 
     @Override
