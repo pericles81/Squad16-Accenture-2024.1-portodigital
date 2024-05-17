@@ -1,5 +1,6 @@
 package com.accenture.accenture.domain.entregadores;
 
+import com.accenture.accenture.domain.entregadores.dto.EntregadorRequest;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,4 +27,11 @@ public class Entregador {
 
     @Column(nullable = false)
     private String senha;
+
+    public Entregador(EntregadorRequest request) {
+        this.nome = request.getNome();
+        this.veiculo = request.getVeiculo();
+        this.placa = request.getPlaca();
+        this.senha = request.getSenha();
+    }
 }

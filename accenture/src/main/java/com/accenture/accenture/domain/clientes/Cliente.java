@@ -1,10 +1,13 @@
 package com.accenture.accenture.domain.clientes;
 
 import com.accenture.accenture.domain.clientes.dto.ClienteRequest;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
 import com.accenture.accenture.domain.produtos.Produto;
+
+import java.util.List;
 
 @Entity
 @Table(name = "Cliente")
@@ -27,13 +30,14 @@ public class Cliente {
     @Column(length = 100, nullable = false)
     private String email;
 
-    @ManyToOne
-    @JoinColumn(name = "produto_id")
-    private Produto produto;
+    @OneToMany(mappedBy = "cliente")
+    @JsonIgnore
+    private List<Produto> produtos;
 
     public Cliente(ClienteRequest clienteToCreate) {
         this.nome = clienteToCreate.getNome();
         this.senha = clienteToCreate.getSenha();
         this.email = clienteToCreate.getEmail();
     }
+
 }

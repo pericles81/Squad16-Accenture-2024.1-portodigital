@@ -8,6 +8,7 @@ import com.accenture.accenture.service.ClienteService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClienteServiceImpl implements ClienteService {
@@ -21,6 +22,12 @@ public class ClienteServiceImpl implements ClienteService {
     @Override
     public List<ClienteResponse> getClientes() {
         return clienteRepository.findAll().stream().map(ClienteResponse::new).toList();
+    }
+
+    @Override
+    public Optional<ClienteResponse> getClienteDetails(Long id) {
+        var cliente = clienteRepository.getReferenceById(id);
+        return Optional.of(new ClienteResponse(cliente));
     }
 
     @Override

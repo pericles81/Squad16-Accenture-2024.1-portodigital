@@ -1,6 +1,7 @@
 package com.accenture.accenture.domain.lojas;
 
 import com.accenture.accenture.domain.lojas.dto.LojaRequest;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -36,6 +37,7 @@ public class Loja {
     private String cnpj;
 
     @OneToMany(mappedBy = "loja")
+    @JsonIgnore
     private List<Produto> produtos;
 
     public Loja(LojaRequest request) {
@@ -45,4 +47,5 @@ public class Loja {
         this.especialidade = request.getEspecialidade();
         this.cnpj = request.getCnpj();
     }
+
 }
