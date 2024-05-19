@@ -1,24 +1,24 @@
 package com.accenture.accenture.domain.entregadores.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class EntregadorRequest {
 
-    @NonNull
+    @NotBlank
     private String nome;
 
-    @NonNull
+    @NotBlank
     private String veiculo;
 
-    @NonNull
+    @NotBlank
     private String senha;
 
-    @NonNull
+    @NotBlank
     private String placa;
 }

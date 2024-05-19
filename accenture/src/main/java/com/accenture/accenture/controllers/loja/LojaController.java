@@ -3,10 +3,10 @@ package com.accenture.accenture.controllers.loja;
 import com.accenture.accenture.domain.lojas.dto.LojaRequest;
 import com.accenture.accenture.domain.lojas.dto.LojaResponse;
 import com.accenture.accenture.service.LojaService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,7 +38,7 @@ public class LojaController {
     }
 
     @PostMapping
-    public ResponseEntity postLoja(@RequestBody @Validated LojaRequest request){
+    public ResponseEntity postLoja(@RequestBody @Valid LojaRequest request){
         lojaService.createLoja(request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
