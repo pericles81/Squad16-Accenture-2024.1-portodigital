@@ -14,6 +14,7 @@ public interface ProdutoService {
 
     List<ProdutoResponseCliente> getProdutoPorCliente(Long clienteId);
     List<ProdutoResponseLoja> getProdutoPorLoja(Long lojaId);
+    List<Object> getProdutos();
 
     void deleteProdutoCliente(Long clienteId, Long produtoId);
     void deleteProdutoLoja(Long lojaId, Long produtoId);
