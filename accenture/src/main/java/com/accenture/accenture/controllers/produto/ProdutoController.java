@@ -5,10 +5,10 @@ import com.accenture.accenture.domain.produtos.dto.ProdutoRequestLoja;
 import com.accenture.accenture.domain.produtos.dto.ProdutoResponseCliente;
 import com.accenture.accenture.domain.produtos.dto.ProdutoResponseLoja;
 import com.accenture.accenture.service.ProdutoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,15 +21,21 @@ public class ProdutoController {
     private ProdutoService produtoService;
 
     @PostMapping("/cliente")
-    public ResponseEntity criarProdutoCliente(@RequestBody @Validated ProdutoRequestCliente requestCliente) {
+    public ResponseEntity criarProdutoCliente(@RequestBody @Valid ProdutoRequestCliente requestCliente) {
         produtoService.createProdutoCliente(requestCliente);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @PostMapping("/loja")
-    public ResponseEntity criarProdutoLoja(@RequestBody @Validated ProdutoRequestLoja requestLoja) {
+    public ResponseEntity criarProdutoLoja(@RequestBody @Valid ProdutoRequestLoja requestLoja) {
         produtoService.createProdutoLoja(requestLoja);
         return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Object>> listarProdutos(){
+        var produtos = produtoService.getProdutos();
+        return ResponseEntity.ok(produtos);
     }
 
     @GetMapping("/cliente/{clienteId}")

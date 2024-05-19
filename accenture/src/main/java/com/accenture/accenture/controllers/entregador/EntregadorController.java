@@ -4,10 +4,10 @@ import com.accenture.accenture.domain.entregadores.Entregador;
 import com.accenture.accenture.domain.entregadores.dto.EntregadorRequest;
 import com.accenture.accenture.domain.entregadores.dto.EntregadorResponse;
 import com.accenture.accenture.service.EntregadorService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -29,7 +29,7 @@ public class EntregadorController {
     }
 
     @PostMapping
-    public ResponseEntity postEntregador(@RequestBody @Validated EntregadorRequest request){
+    public ResponseEntity postEntregador(@RequestBody @Valid EntregadorRequest request){
         entregadorService.createEntregador(request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

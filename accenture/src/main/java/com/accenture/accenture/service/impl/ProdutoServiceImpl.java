@@ -12,6 +12,7 @@ import com.accenture.accenture.repositories.ProdutoRepository;
 import com.accenture.accenture.service.ProdutoService;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -61,6 +62,11 @@ public class ProdutoServiceImpl implements ProdutoService {
     @Override
     public List<ProdutoResponseLoja> getProdutoPorLoja(Long lojaId) {
         return produtoRepository.findProdutosByLojaId(lojaId).stream().map(ProdutoResponseLoja::new).toList();
+    }
+
+    @Override
+    public List<Object> getProdutos() {
+        return Collections.singletonList(produtoRepository.findAll());
     }
 
     @Override

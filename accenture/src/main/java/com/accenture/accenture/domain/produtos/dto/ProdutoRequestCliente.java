@@ -1,25 +1,24 @@
 package com.accenture.accenture.domain.produtos.dto;
 
-import com.accenture.accenture.domain.clientes.Cliente;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProdutoRequestCliente {
 
-    @NonNull
+    @NotBlank
     private String nome;
-    @NonNull
+    @NotBlank
     private Double preco;
-    @NonNull
+    @NotBlank
     private int quantidade;
-    @NonNull
+    @NotBlank
     private String descricao;
-    @NonNull
+    @NotBlank
     private Long clienteId;
 
 }

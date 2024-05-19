@@ -1,26 +1,26 @@
 package com.accenture.accenture.domain.lojas.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 @Data
 @NoArgsConstructor
 public class LojaRequest {
 
-    @NonNull
+    @NotBlank
     private String nome;
 
-    @NonNull
+    @NotBlank
     private String endereco;
 
-    @NonNull
+    @NotBlank
     private String senha;
 
-    @NonNull
+    @NotBlank
     private String especialidade;
 
-    @NonNull
+    @NotBlank
     private String cnpj;
 
 }

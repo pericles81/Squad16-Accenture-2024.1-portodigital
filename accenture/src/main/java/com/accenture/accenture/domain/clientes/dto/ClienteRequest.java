@@ -1,6 +1,7 @@
 package com.accenture.accenture.domain.clientes.dto;
 
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 @Data
@@ -8,11 +9,13 @@ import lombok.*;
 @NoArgsConstructor
 public class ClienteRequest {
 
-    @NonNull
+    @NotBlank
     private String nome;
-    @NonNull
+
+    @NotBlank
     private String senha;
-    @NonNull
+
+    @NotBlank
     private String email;
 
 }
