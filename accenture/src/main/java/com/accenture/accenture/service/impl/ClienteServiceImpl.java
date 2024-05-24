@@ -5,6 +5,7 @@ import com.accenture.accenture.domain.clientes.dto.ClienteRequest;
 import com.accenture.accenture.domain.clientes.dto.ClienteResponse;
 import com.accenture.accenture.repositories.ClienteRepository;
 import com.accenture.accenture.service.ClienteService;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,6 +29,7 @@ public class ClienteServiceImpl implements ClienteService {
     public Optional<ClienteResponse> getClienteDetails(Long id) {
         var cliente = clienteRepository.getReferenceById(id);
         return Optional.of(new ClienteResponse(cliente));
+
     }
 
     @Override

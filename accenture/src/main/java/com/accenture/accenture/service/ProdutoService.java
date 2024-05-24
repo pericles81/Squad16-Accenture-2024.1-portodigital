@@ -9,8 +9,8 @@ import java.util.List;
 
 public interface ProdutoService {
 
-    void createProdutoCliente(ProdutoRequestCliente requestCliente);
-    void createProdutoLoja(ProdutoRequestLoja requestLoja);
+    void createProdutoCliente(ProdutoRequestCliente requestCliente, Long id);
+    void createProdutoLoja(ProdutoRequestLoja requestLoja, Long id);
 
     List<ProdutoResponseCliente> getProdutoPorCliente(Long clienteId);
     List<ProdutoResponseLoja> getProdutoPorLoja(Long lojaId);

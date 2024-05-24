@@ -20,6 +20,9 @@ public class Entregador {
     private String nome;
 
     @Column(length = 100, nullable = false)
+    private String email;
+
+    @Column(length = 100, nullable = false)
     private String veiculo;
 
     @Column(length = 10)

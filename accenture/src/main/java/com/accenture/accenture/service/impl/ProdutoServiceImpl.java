@@ -1,6 +1,5 @@
 package com.accenture.accenture.service.impl;
 
-import com.accenture.accenture.domain.clientes.Cliente;
 import com.accenture.accenture.domain.produtos.Produto;
 import com.accenture.accenture.domain.produtos.dto.ProdutoRequestCliente;
 import com.accenture.accenture.domain.produtos.dto.ProdutoRequestLoja;
@@ -10,6 +9,7 @@ import com.accenture.accenture.repositories.ClienteRepository;
 import com.accenture.accenture.repositories.LojaRepository;
 import com.accenture.accenture.repositories.ProdutoRepository;
 import com.accenture.accenture.service.ProdutoService;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -31,28 +31,34 @@ public class ProdutoServiceImpl implements ProdutoService {
     }
 
     @Override
-    public void createProdutoCliente(ProdutoRequestCliente requestCliente) {
-        var produto = new Produto(requestCliente);
-        var clienteId = requestCliente.getClienteId();
+    public void createProdutoCliente(ProdutoRequestCliente requestCliente, Long clienteId) {
+        var cliente = clienteRepository.findById(clienteId);
 
-        var cliente = clienteRepository.getReferenceById(clienteId);
+        if (cliente.isPresent()){
+            var produto = new Produto(requestCliente);
+            produto.setCliente(cliente.get());
+            cliente.get().getProdutos().add(produto);
+            produtoRepository.save(produto);
+        }else {
+            throw new EntityNotFoundException("Cliente não encontrado.");
+        }
 
-        produto.setCliente(cliente);
-        cliente.getProdutos().add(produto);
-        produtoRepository.save(produto);
     }
 
     @Override
-    public void createProdutoLoja(ProdutoRequestLoja requestLoja) {
-        var produto = new Produto(requestLoja);
-        var lojaId = requestLoja.getLojaId();
-        var loja = lojaRepository.getReferenceById(lojaId);
+    public void createProdutoLoja(ProdutoRequestLoja requestLoja, Long lojaId) {
+        var loja = lojaRepository.findById(lojaId);
 
-        produto.setLoja(loja);
-        loja.getProdutos().add(produto);
-        produtoRepository.save(produto);
+        if(loja.isPresent()){
+            var produto = new Produto(requestLoja);
+            produto.setLoja(loja.get());
+            loja.get().getProdutos().add(produto);
+            produtoRepository.save(produto);
+        }else {
+            throw new EntityNotFoundException("Loja não encontrada.");
+
+        }
     }
-
 
     @Override
     public List<ProdutoResponseCliente> getProdutoPorCliente(Long clienteId) {
