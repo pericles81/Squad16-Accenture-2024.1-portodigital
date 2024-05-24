@@ -14,6 +14,9 @@ public class EntregadorRequest {
     private String nome;
 
     @NotBlank
+    private String email;
+
+    @NotBlank
     private String veiculo;
 
     @NotBlank
