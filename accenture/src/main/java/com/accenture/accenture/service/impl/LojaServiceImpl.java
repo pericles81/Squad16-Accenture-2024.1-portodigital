@@ -1,8 +1,8 @@
 package com.accenture.accenture.service.impl;
 
-import com.accenture.accenture.domain.lojas.Loja;
-import com.accenture.accenture.domain.lojas.dto.LojaRequest;
-import com.accenture.accenture.domain.lojas.dto.LojaResponse;
+import com.accenture.accenture.domain.usuario.lojas.Loja;
+import com.accenture.accenture.domain.usuario.lojas.dto.LojaRequest;
+import com.accenture.accenture.domain.usuario.lojas.dto.LojaResponse;
 import com.accenture.accenture.repositories.LojaRepository;
 import com.accenture.accenture.service.LojaService;
 import org.springframework.stereotype.Service;
@@ -17,6 +17,12 @@ public class LojaServiceImpl implements LojaService {
 
     public LojaServiceImpl(LojaRepository lojaRepository) {
         this.lojaRepository = lojaRepository;
+    }
+
+    @Override
+    public Optional<Loja> login(String login, String senha) {
+        var user = lojaRepository.findByCnpjAndSenha(login, senha);
+        return user;
     }
 
     @Override

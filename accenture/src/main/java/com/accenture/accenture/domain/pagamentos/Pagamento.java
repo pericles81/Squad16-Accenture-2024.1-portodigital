@@ -3,7 +3,7 @@ package com.accenture.accenture.domain.pagamentos;
 import jakarta.persistence.*;
 import lombok.*;
 
-import com.accenture.accenture.domain.clientes.Cliente;
+import com.accenture.accenture.domain.usuario.clientes.Cliente;
 
 @Entity
 @Table(name = "Pagamento")

@@ -1,6 +1,6 @@
-package com.accenture.accenture.domain.lojas;
+package com.accenture.accenture.domain.usuario.lojas;
 
-import com.accenture.accenture.domain.lojas.dto.LojaRequest;
+import com.accenture.accenture.domain.usuario.lojas.dto.LojaRequest;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;

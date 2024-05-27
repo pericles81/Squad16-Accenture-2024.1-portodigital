@@ -1,6 +1,6 @@
 package com.accenture.accenture.domain.produtos.dto;
 
-import com.accenture.accenture.domain.clientes.Cliente;
+import com.accenture.accenture.domain.usuario.clientes.Cliente;
 import com.accenture.accenture.domain.produtos.Produto;
 import lombok.Data;
 

@@ -1,6 +1,6 @@
-package com.accenture.accenture.domain.lojas.dto;
+package com.accenture.accenture.domain.usuario.lojas.dto;
 
-import com.accenture.accenture.domain.lojas.Loja;
+import com.accenture.accenture.domain.usuario.lojas.Loja;
 import com.accenture.accenture.domain.produtos.Produto;
 import lombok.Data;
 

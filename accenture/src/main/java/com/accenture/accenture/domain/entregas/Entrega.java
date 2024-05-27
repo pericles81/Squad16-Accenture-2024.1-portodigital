@@ -3,7 +3,7 @@ package com.accenture.accenture.domain.entregas;
 import jakarta.persistence.*;
 import lombok.*;
 
-import com.accenture.accenture.domain.entregadores.Entregador;
+import com.accenture.accenture.domain.usuario.entregadores.Entregador;
 
 @Entity
 @Table(name = "Entrega")

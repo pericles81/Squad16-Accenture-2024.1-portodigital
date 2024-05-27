@@ -1,7 +1,7 @@
 package com.accenture.accenture.controllers.cliente;
 
-import com.accenture.accenture.domain.clientes.dto.ClienteRequest;
-import com.accenture.accenture.domain.clientes.dto.ClienteResponse;
+import com.accenture.accenture.domain.usuario.clientes.dto.ClienteRequest;
+import com.accenture.accenture.domain.usuario.clientes.dto.ClienteResponse;
 import com.accenture.accenture.service.ClienteService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

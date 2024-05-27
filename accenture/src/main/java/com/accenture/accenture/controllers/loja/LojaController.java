@@ -1,7 +1,7 @@
 package com.accenture.accenture.controllers.loja;
 
-import com.accenture.accenture.domain.lojas.dto.LojaRequest;
-import com.accenture.accenture.domain.lojas.dto.LojaResponse;
+import com.accenture.accenture.domain.usuario.lojas.dto.LojaRequest;
+import com.accenture.accenture.domain.usuario.lojas.dto.LojaResponse;
 import com.accenture.accenture.service.LojaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

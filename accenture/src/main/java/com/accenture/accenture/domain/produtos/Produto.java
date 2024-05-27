@@ -1,7 +1,7 @@
 package com.accenture.accenture.domain.produtos;
 
-import com.accenture.accenture.domain.clientes.Cliente;
-import com.accenture.accenture.domain.lojas.Loja;
+import com.accenture.accenture.domain.usuario.clientes.Cliente;
+import com.accenture.accenture.domain.usuario.lojas.Loja;
 import com.accenture.accenture.domain.produtos.dto.ProdutoRequestCliente;
 import com.accenture.accenture.domain.produtos.dto.ProdutoRequestLoja;
 import com.fasterxml.jackson.annotation.JsonManagedReference;

@@ -4,10 +4,9 @@ import com.accenture.accenture.domain.carrinhoProdutos.Carrinho;
 import jakarta.persistence.*;
 import lombok.*;
 
-import com.accenture.accenture.domain.clientes.Cliente;
+import com.accenture.accenture.domain.usuario.clientes.Cliente;
 import com.accenture.accenture.domain.entregas.Entrega;
 import com.accenture.accenture.domain.pagamentos.Pagamento;
-import com.accenture.accenture.domain.produtos.Produto;
 
 import java.util.Date;
 import java.util.List;
