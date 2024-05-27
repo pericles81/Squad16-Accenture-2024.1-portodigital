@@ -1,6 +1,6 @@
-package com.accenture.accenture.domain.clientes;
+package com.accenture.accenture.domain.usuario.clientes;
 
-import com.accenture.accenture.domain.clientes.dto.ClienteRequest;
+import com.accenture.accenture.domain.usuario.clientes.dto.ClienteRequest;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;

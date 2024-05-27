@@ -1,7 +1,7 @@
-package com.accenture.accenture.domain.entregadores.dto;
+package com.accenture.accenture.domain.usuario.entregadores.dto;
 
 
-import com.accenture.accenture.domain.entregadores.Entregador;
+import com.accenture.accenture.domain.usuario.entregadores.Entregador;
 import lombok.Data;
 
 @Data

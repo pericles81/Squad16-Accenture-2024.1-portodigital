@@ -1,4 +1,4 @@
-package com.accenture.accenture.domain.lojas.dto;
+package com.accenture.accenture.domain.usuario.lojas.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
