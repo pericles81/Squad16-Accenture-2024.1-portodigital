@@ -1,5 +1,6 @@
 package com.accenture.accenture.controllers.produto;
 
+import com.accenture.accenture.domain.produtos.Produto;
 import com.accenture.accenture.domain.produtos.dto.ProdutoRequestCliente;
 import com.accenture.accenture.domain.produtos.dto.ProdutoRequestLoja;
 import com.accenture.accenture.domain.produtos.dto.ProdutoResponseCliente;
@@ -47,7 +48,7 @@ public class ProdutoController {
 
 
     @GetMapping
-    public ResponseEntity<List<Object>> listarProdutos(){
+    public ResponseEntity<List<Produto>> listarProdutos(){
         var produtos = produtoService.getProdutos();
         if (produtos.isEmpty())
             return ResponseEntity.noContent().build();

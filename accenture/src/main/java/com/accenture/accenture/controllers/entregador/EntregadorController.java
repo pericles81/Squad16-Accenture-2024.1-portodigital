@@ -1,8 +1,7 @@
 package com.accenture.accenture.controllers.entregador;
 
-import com.accenture.accenture.domain.entregadores.Entregador;
-import com.accenture.accenture.domain.entregadores.dto.EntregadorRequest;
-import com.accenture.accenture.domain.entregadores.dto.EntregadorResponse;
+import com.accenture.accenture.domain.usuario.entregadores.dto.EntregadorRequest;
+import com.accenture.accenture.domain.usuario.entregadores.dto.EntregadorResponse;
 import com.accenture.accenture.service.EntregadorService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

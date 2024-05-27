@@ -1,5 +1,6 @@
 package com.accenture.accenture.service;
 
+import com.accenture.accenture.domain.produtos.Produto;
 import com.accenture.accenture.domain.produtos.dto.ProdutoRequestCliente;
 import com.accenture.accenture.domain.produtos.dto.ProdutoRequestLoja;
 import com.accenture.accenture.domain.produtos.dto.ProdutoResponseCliente;
@@ -14,7 +15,7 @@ public interface ProdutoService {
 
     List<ProdutoResponseCliente> getProdutoPorCliente(Long clienteId);
     List<ProdutoResponseLoja> getProdutoPorLoja(Long lojaId);
-    List<Object> getProdutos();
+    List<Produto> getProdutos();
 
     void deleteProdutoCliente(Long clienteId, Long produtoId);
     void deleteProdutoLoja(Long lojaId, Long produtoId);

@@ -71,8 +71,8 @@ public class ProdutoServiceImpl implements ProdutoService {
     }
 
     @Override
-    public List<Object> getProdutos() {
-        return Collections.singletonList(produtoRepository.findAll());
+    public List<Produto> getProdutos() {
+        return produtoRepository.findAll();
     }
 
     @Override

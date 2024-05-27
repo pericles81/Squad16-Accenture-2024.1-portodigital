@@ -1,8 +1,8 @@
 package com.accenture.accenture.service.impl;
 
-import com.accenture.accenture.domain.entregadores.Entregador;
-import com.accenture.accenture.domain.entregadores.dto.EntregadorRequest;
-import com.accenture.accenture.domain.entregadores.dto.EntregadorResponse;
+import com.accenture.accenture.domain.usuario.entregadores.Entregador;
+import com.accenture.accenture.domain.usuario.entregadores.dto.EntregadorRequest;
+import com.accenture.accenture.domain.usuario.entregadores.dto.EntregadorResponse;
 import com.accenture.accenture.repositories.EntregadorRepository;
 import com.accenture.accenture.service.EntregadorService;
 import org.springframework.stereotype.Service;
@@ -16,6 +16,12 @@ public class EntregadorServiceImpl implements EntregadorService {
 
     public EntregadorServiceImpl(EntregadorRepository entregadorRepository) {
         this.entregadorRepository = entregadorRepository;
+    }
+
+    @Override
+    public Optional<Entregador> login(String login, String senha) {
+        var user = entregadorRepository.findByEmailAndSenha(login, senha);
+        return user;
     }
 
     @Override
